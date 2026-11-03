@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#fbf8ff;color:#1a1b22;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-container": "#cb80fe",
+          "on-secondary-fixed": "#2f004c",
+          "outline": "#8e6f74",
+          "inverse-surface": "#2f3038",
+          "surface-bright": "#fbf8ff",
+          "surface-variant": "#e3e1ec",
+          "tertiary": "#9f3d00",
+          "surface-dim": "#dad9e3",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed": "#ffdbcd",
+          "on-tertiary-fixed": "#360f00",
+          "surface-tint": "#bb0452",
+          "on-error-container": "#93000a",
+          "primary-container": "#da2a67",
+          "on-secondary-container": "#580088",
+          "on-primary": "#ffffff",
+          "secondary-fixed": "#f4daff",
+          "surface-container": "#eeedf7",
+          "on-secondary": "#ffffff",
+          "on-background": "#1a1b22",
+          "on-surface": "#1a1b22",
+          "secondary": "#833ab4",
+          "primary": "#b7004f",
+          "on-primary-container": "#fffbff",
+          "on-tertiary-container": "#fffbff",
+          "primary-fixed-dim": "#ffb1c0",
+          "inverse-on-surface": "#f1effa",
+          "on-primary-fixed": "#3f0017",
+          "outline-variant": "#e2bec3",
+          "surface-container-low": "#f4f2fd",
+          "secondary-fixed-dim": "#e3b5ff",
+          "surface": "#fbf8ff",
+          "error": "#ba1a1a",
+          "primary-fixed": "#ffd9df",
+          "error-container": "#ffdad6",
+          "inverse-primary": "#ffb1c0",
+          "on-error": "#ffffff",
+          "background": "#fbf8ff",
+          "tertiary-container": "#c35110",
+          "surface-container-high": "#e8e7f1",
+          "on-secondary-fixed-variant": "#6a1c9b",
+          "surface-container-highest": "#e3e1ec",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed-variant": "#7c2e00",
+          "on-primary-fixed-variant": "#90003d",
+          "tertiary-fixed-dim": "#ffb596",
+          "on-surface-variant": "#5a4045"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.5rem",
+          "lg": "0.75rem",
+          "xl": "1rem",
+          "full": "9999px"
+        },
+        "fontFamily": {
+          "headline": ["Plus Jakarta Sans", "sans-serif"],
+          "body": ["Inter", "sans-serif"]
+        }
+      }
+    }
+  };
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary-fixed selection:text-primary">
+<!-- Persistent Header -->
+<header class="fixed top-0 w-full z-40 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl border-b border-surface-container-high/60 shadow-[0_2px_12px_rgba(26,27,34,0.04)]">
+<div class="h-16 px-4 flex items-center justify-between gap-2 max-w-lg mx-auto">
+<div class="flex items-center gap-2.5 min-w-0">
+<img alt="Brand logo" class="h-8 w-auto object-contain shrink-0" src="/logo/screen.png"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline font-bold text-base tracking-tight text-on-surface truncate">InstaGrowthPro</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">99.9% Online</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex items-center px-2.5 py-1 rounded-full bg-secondary-fixed/70 text-on-secondary-fixed text-xs font-semibold">
+<span>Boost Market</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-16 min-h-screen bg-surface">
+<div class="flex flex-col w-full text-on-surface max-w-lg mx-auto relative px-4 py-5 flex-1">
+<!-- Ambient Light Glows -->
+<div class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-primary-fixed/35 blur-[85px] pointer-events-none"></div>
+<div class="absolute top-60 -right-10 w-72 h-72 rounded-full bg-secondary-fixed/35 blur-[95px] pointer-events-none"></div>
+<!-- ================= STEP 1: HOME PAGE ================= -->
+<section class="relative z-10 flex flex-col justify-center flex-1 my-auto py-6 transition-all duration-300" id="step-1" style="display: flex;">
+<div class="text-center mb-6 flex flex-col items-center">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary via-primary-container to-secondary p-0.5 shadow-lg shadow-primary/20 mb-3.5">
+<div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
+<svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+<path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+<path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+<path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+</svg>
+</div>
+</div>
+<h1 class="font-headline text-2xl font-extrabold text-slate-900 tracking-tight">7 Day Free $0 Cost</h1>
+</div>
+<!-- Target Instagram Handle Card -->
+<div class="w-full rounded-2xl bg-surface-container-lowest border border-slate-200/90 p-5 shadow-[0_8px_30px_rgba(26,27,34,0.06)] flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-headline text-sm text-slate-900 font-bold" for="usernameInput">Target Instagram Handle</label>
+<span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">Public ID</span>
+</div>
+<div class="relative flex items-center">
+<div class="absolute left-3.5 flex items-center pointer-events-none text-primary">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="4"></circle>
+<path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+</svg>
+</div>
+<input class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50/90 border border-slate-200 text-slate-900 placeholder:text-slate-400 text-sm font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="usernameInput" placeholder="Enter Instagram ID (e.g. @username)" type="text"/>
+</div>
+</div>
+<button class="relative group w-full py-4 px-5 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-white font-headline text-sm font-bold tracking-wide uppercase shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all active:scale-[0.98] flex items-center justify-center gap-2 overflow-hidden cursor-pointer" id="btn-continue" onclick="goToStep2()" type="button">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></div>
+<span class="relative z-10 pointer-events-none" id="btnContinueText">CONTINUE TO SELECT FOLLOWERS</span>
+<svg class="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1 pointer-events-none" id="btnContinueIcon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+<div id="btnContinueSpinner" class="hidden relative z-10 items-center gap-2">
+<svg class="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+</svg>
+<span>FETCHING INSTAGRAM PROFILE...</span>
+</div>
+</button>
+</div>
+</section>
+<!-- ================= STEP 2: FOLLOWER SELECTION SCREEN ================= -->
+<section class="relative z-10 flex-col gap-4 pb-24 transition-all duration-300" id="step-2" style="display: none;">
+<!-- Realistic Instagram Profile Card -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border border-slate-200/90 shadow-[0_4px_20px_rgba(26,27,34,0.06)] flex flex-col gap-3.5 w-full">
+<div class="flex items-center gap-4">
+<!-- Instagram Gradient Ring Avatar -->
+<div class="relative w-16 h-16 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 shrink-0">
+<div class="w-full h-full rounded-full bg-white p-[2px]">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden text-slate-700 font-headline font-bold text-xl uppercase shadow-inner" id="igAvatarDisplay">
+U
+</div>
+</div>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white"></span>
+</div>
+<!-- Profile Info & Verified Badge -->
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline font-bold text-base text-slate-900 truncate" id="igDisplayName">User</h3>
+<!-- Instagram Verified Badge -->
+<svg class="w-4 h-4 text-sky-500 shrink-0" id="igVerifiedBadge" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"></path>
+</svg>
+</div>
+<span class="text-xs font-medium text-slate-500 truncate" id="igHandleDisplay">@username</span>
+</div>
+</div>
+<!-- Classic Instagram Stats Row -->
+<div class="grid grid-cols-3 divide-x divide-slate-100 py-2.5 px-1 bg-slate-50/70 rounded-xl border border-slate-100 text-center">
+<div class="flex flex-col items-center">
+<span class="font-headline font-extrabold text-sm text-slate-900" id="igPostsCount">142</span>
+<span class="text-[11px] font-medium text-slate-500">Posts</span>
+</div>
+<div class="flex flex-col items-center relative">
+<div class="flex items-center gap-1">
+<span class="font-headline font-extrabold text-sm text-slate-900" id="igFollowersCount">1,840</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<span class="text-[11px] font-medium text-emerald-600 font-semibold">Followers</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline font-extrabold text-sm text-slate-900" id="igFollowingCount">380</span>
+<span class="text-[11px] font-medium text-slate-500">Following</span>
+</div>
+</div>
+<!-- Bio & Mutual Friends Snippet -->
+<div class="flex flex-col gap-1 text-xs text-slate-600 px-0.5">
+<p class="leading-relaxed" id="igBioDisplay">Creator • Digital lifestyle &amp; tech enthusiast 🚀</p>
+<div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
+<span class="material-symbols-outlined text-[13px] text-slate-400">group</span>
+<span>Followed by 12 mutual friends</span>
+</div>
+</div>
+</div>
+<!-- Select Follower Package Section -->
+<div class="flex flex-col gap-3 w-full">
+<div class="flex items-baseline justify-between px-1">
+<div class="flex flex-col">
+<h2 class="font-headline text-base font-bold text-slate-900 tracking-tight uppercase">Select Follower Package</h2>
+</div>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Guaranteed</span>
+</div>
+<!-- 2-Column Compact Grid -->
+<div class="grid grid-cols-2 gap-2.5 w-full" id="packageGrid">
+<!-- 1,000 -->
+<button class="package-card relative p-3.5 rounded-xl bg-surface-container-lowest border border-slate-200/90 flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-sm hover:border-slate-300" data-label="Starter" data-val="1000" onclick="updateActiveSelection(1000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors">Starter</span>
+<span class="status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-slate-900 mt-1 transition-colors">1,000</span>
+</button>
+<!-- 5,000 -->
+<button class="package-card relative p-3.5 rounded-xl bg-surface-container-lowest border border-slate-200/90 flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-sm hover:border-slate-300" data-label="Popular" data-val="5000" onclick="updateActiveSelection(5000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors">Popular</span>
+<span class="status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-slate-900 mt-1 transition-colors">5,000</span>
+</button>
+<!-- 10,000 (Default active) -->
+<button class="package-card active-package relative p-3.5 rounded-xl bg-white border-2 border-primary flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-[0_4px_16px_rgba(183,0,79,0.12)]" data-label="Most Popular" data-val="10000" onclick="updateActiveSelection(10000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white transition-colors">Most Popular</span>
+<span class="status-indicator w-2.5 h-2.5 rounded-full bg-primary animate-pulse transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-primary mt-1 transition-colors">10,000</span>
+</button>
+<!-- 25,000 -->
+<button class="package-card relative p-3.5 rounded-xl bg-surface-container-lowest border border-slate-200/90 flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-sm hover:border-slate-300" data-label="Creator Pro" data-val="25000" onclick="updateActiveSelection(25000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors">Creator Pro</span>
+<span class="status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-slate-900 mt-1 transition-colors">25,000</span>
+</button>
+<!-- 50,000 -->
+<button class="package-card relative p-3.5 rounded-xl bg-surface-container-lowest border border-slate-200/90 flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-sm hover:border-slate-300" data-label="Viral Pack" data-val="50000" onclick="updateActiveSelection(50000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors">Viral Pack</span>
+<span class="status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-slate-900 mt-1 transition-colors">50,000</span>
+</button>
+<!-- 100,000 -->
+<button class="package-card relative p-3.5 rounded-xl bg-surface-container-lowest border border-slate-200/90 flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-sm hover:border-slate-300" data-label="Influencer" data-val="100000" onclick="updateActiveSelection(100000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors">Influencer</span>
+<span class="status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-slate-900 mt-1 transition-colors">100,000</span>
+</button>
+<!-- 500,000 -->
+<button class="package-card relative p-3.5 rounded-xl bg-surface-container-lowest border border-slate-200/90 flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-sm hover:border-slate-300" data-label="Celebrity" data-val="500000" onclick="updateActiveSelection(500000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors">Celebrity</span>
+<span class="status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-slate-900 mt-1 transition-colors">500,000</span>
+</button>
+<!-- 1,000,000 -->
+<button class="package-card relative p-3.5 rounded-xl bg-surface-container-lowest border border-slate-200/90 flex flex-col items-start gap-1 text-left transition-all active:scale-[0.98] shadow-sm hover:border-slate-300" data-label="1M Elite" data-val="1000000" onclick="updateActiveSelection(1000000)" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors">1M Elite</span>
+<span class="status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all"></span>
+</div>
+<span class="package-amount font-headline text-xl font-bold text-slate-900 mt-1 transition-colors">1,000,000</span>
+</button>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-safe bg-surface-container-lowest/95 backdrop-blur-lg border-t border-slate-200/80 z-30">
+<div class="max-w-lg mx-auto">
+<button class="relative group w-full py-4 px-4 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-white font-headline text-sm font-bold tracking-wide uppercase shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all active:scale-[0.98] flex items-center justify-center gap-2 overflow-hidden cursor-pointer" id="step2DispatchBtn" onclick="goToRequirementScreen()" type="button">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></div>
+<svg class="w-5 h-5 shrink-0 relative z-10 pointer-events-none" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+<path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+<path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+<path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+</svg>
+<span class="relative z-10 pointer-events-none" id="step2BtnLabel">CONTINUE WITH 10k FOLLOWERS</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ================= STEP 2.5: REQUIREMENT / TASK SCREEN ================= -->
+<section class="relative z-10 flex-col items-center justify-center flex-1 my-auto py-6 transition-all duration-300 w-full" id="step-requirement" style="display: none;">
+<div class="w-full max-w-sm mx-auto flex flex-col items-center gap-4">
+<!-- Clean Prominent Header: No 000s, strictly 'k' or 'M' -->
+<div class="text-center flex flex-col items-center px-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold tracking-wider uppercase mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Verification Step</span>
+</span>
+<h2 class="font-headline text-2xl font-extrabold text-slate-900 tracking-tight" id="requirementTitle">Get 10k Followers (requirement)</h2>
+<p class="text-xs text-slate-500 mt-1 max-w-xs text-center">Complete the simple requirement below to authenticate and release your delivery.</p>
+</div>
+<!-- GIF Instruction Card -->
+<div class="w-full rounded-2xl bg-surface-container-lowest border border-slate-200/90 shadow-[0_8px_30px_rgba(26,27,34,0.08)] overflow-hidden p-2.5 flex flex-col items-center">
+<div class="w-full aspect-square rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center relative">
+<img alt="Fulfill Requirement Guide" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY1RyAa0MrT4HiWkKmSn8lrFTePS4F4po8_TVidImXL77XtWkFq6Wx1Pt4yVUoZnWXys1Mi6ijx5dRb9J6HGlb9i6vohLx2_0f_Zc3l2rk2TpTIJyx0WZs_VbCV56LBxqAQSGjuNjShOX47-yD-VRs2wNMgdXZ_s7EnUlzMtdfZmMonLMyccQ17jragxTRn8yF1dr8Cb7mHNPLv0flRjFBnxO5mYxT1LoNPMJqSe3zUKoxtctO1u_Z4A"/>
+</div>
+<div class="w-full py-2.5 px-2 flex items-center justify-between text-xs text-slate-500 font-medium">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+<span>Target: @igluafile</span>
+</span>
+<span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-semibold">1-Tap Action</span>
+</div>
+</div>
+<!-- Primary Action Button -->
+<div class="w-full flex flex-col gap-2">
+<button class="relative group w-full py-4 px-5 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-white font-headline text-sm font-bold tracking-wide uppercase shadow-lg shadow-primary/25 hover:shadow-primary/40 active:scale-[0.98] transition-all flex items-center justify-center gap-2 overflow-hidden cursor-pointer" id="requirementActionBtn" onclick="handleRequirementClick()" type="button">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></div>
+<!-- Idle / Normal State Content -->
+<span class="relative z-10 flex items-center justify-center gap-2 pointer-events-none" id="reqBtnNormalContent">
+<span class="material-symbols-outlined text-[19px]">task_alt</span>
+<span id="reqBtnLabel">FULFILL REQUIREMENT</span>
+</span>
+<!-- 5-Second Loading State: Only Sleek Spinner without seconds counter -->
+<div class="relative z-10 items-center justify-center gap-2.5 pointer-events-none hidden" id="reqBtnLoadingContent">
+<svg class="animate-spin h-5 w-5 text-white" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span class="text-xs font-bold tracking-wider">Verifying Requirement...</span>
+</div>
+<!-- Transformed Ready State Content -->
+<span class="relative z-10 items-center justify-center gap-2 pointer-events-none hidden" id="reqBtnReadyContent">
+<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+<path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+<path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+<path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+</svg>
+<span id="reqBtnReadyLabel">RECEIVE 10k FOLLOWERS NOW</span>
+</span>
+</button>
+<p class="text-center text-[11px] text-slate-400 font-medium">Safe &amp; 100% compliant with Instagram community standards</p>
+</div>
+</div>
+</section>
+<!-- ================= STEP 3: 10-SECOND DISPATCH SCREEN ================= -->
+<section class="relative z-10 flex-col items-center justify-center flex-1 my-auto py-8 transition-all duration-300" id="step-3" style="display: none;">
+<div class="w-full max-w-sm rounded-3xl bg-white border border-slate-200/90 p-7 shadow-2xl flex flex-col items-center text-center gap-5 relative overflow-hidden">
+<!-- Ambient Top Accent Line -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-primary-container to-secondary"></div>
+<!-- 10s Countdown Circular Graphic -->
+<div class="relative w-28 h-28 flex items-center justify-center my-1">
+<svg class="w-28 h-28 -rotate-90 transform" viewbox="0 0 100 100">
+<circle class="text-slate-100" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-width="7"></circle>
+<circle class="text-primary transition-all duration-100 ease-linear" cx="50" cy="50" fill="transparent" id="countdownCircle" r="42" stroke="url(#circleGrad)" stroke-dasharray="263.89" stroke-dashoffset="263.89" stroke-linecap="round" stroke-width="7"></circle>
+<defs>
+<lineargradient id="circleGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#b7004f"></stop>
+<stop offset="50%" stop-color="#da2a67"></stop>
+<stop offset="100%" stop-color="#833ab4"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="font-headline text-3xl font-extrabold text-slate-900" id="timerCount">10s</span>
+<span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Remaining</span>
+</div>
+</div>
+<!-- Telemetry Status Info -->
+<div class="flex flex-col gap-1.5 w-full">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary mx-auto text-[11px] font-bold tracking-wide uppercase">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>Live Dispatch Protocol</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-slate-900 mt-1 min-h-[28px]" id="step3StatusText">Connecting to Instagram API Cluster...</h3>
+<p class="text-xs text-slate-500" id="step3SubText">Initializing node verification socket</p>
+</div>
+<!-- Dynamic Follower Counter Stream -->
+<div class="w-full p-3.5 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col gap-1 items-center">
+<span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Streaming Followers</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline text-2xl font-extrabold text-primary" id="streamCounter">0</span>
+<span class="text-xs font-bold text-slate-400" id="streamTarget">/ 10k</span>
+</div>
+</div>
+<!-- Progress Bar & Velocity Metric -->
+<div class="w-full flex flex-col gap-2">
+<div class="w-full h-3 rounded-full bg-slate-100 overflow-hidden p-0.5 border border-slate-200">
+<div class="h-full rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary w-0 transition-all duration-100" id="step3ProgressBar"></div>
+</div>
+<div class="flex justify-between text-xs text-slate-500 font-medium">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-emerald-500">speed</span>
+<span id="step3SpeedRate">3,420/sec</span>
+</span>
+<span class="text-slate-900 font-bold" id="step3ProgressPercent">0%</span>
+</div>
+</div>
+<!-- Target Confirmation Badge -->
+<div class="text-xs text-slate-500 font-medium">
+          Target: <span class="text-slate-900 font-bold" id="step3TargetAccount">@username</span>
+</div>
+</div>
+</section>
+<!-- ================= STEP 4: SUCCESS SCREEN ================= -->
+<section class="relative z-10 flex-col items-center justify-center flex-1 my-auto py-8 transition-all duration-300" id="step-4" style="display: none;">
+<div class="w-full max-w-sm rounded-3xl bg-white border border-slate-200/90 p-5 shadow-2xl flex flex-col items-center text-center gap-4 relative overflow-hidden">
+<!-- Celebration Glow Ring -->
+<div class="relative w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center shadow-lg shadow-emerald-500/10 shrink-0">
+<span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-20"></span>
+<div class="w-11 h-11 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-md">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<div class="flex flex-col gap-0.5 w-full">
+<span class="text-[11px] font-extrabold tracking-widest text-emerald-600 uppercase">Transfer Successful</span>
+<h2 class="font-headline text-xl font-extrabold text-slate-900">Followers Dispatched!</h2>
+<p class="text-xs text-slate-500">Real-time followers have synced to your active profile.</p>
+</div>
+<!-- Authentic Instagram Profile Card with Live Animated Counter -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border border-slate-200/90 shadow-[0_4px_20px_rgba(26,27,34,0.06)] flex flex-col gap-3.5 w-full text-left">
+<div class="flex items-center gap-3.5">
+<!-- Instagram Gradient Ring Avatar -->
+<div class="relative w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 shrink-0">
+<div class="w-full h-full rounded-full bg-white p-[2px]">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden text-slate-700 font-headline font-bold text-lg uppercase shadow-inner" id="successAvatarDisplay">
+U
+</div>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white"></span>
+</div>
+<!-- Profile Info & Verified Badge -->
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline font-bold text-base text-slate-900 truncate" id="successDisplayName">User</h3>
+<!-- Instagram Verified Badge -->
+<svg class="w-4 h-4 text-sky-500 shrink-0" id="successVerifiedBadge" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"></path>
+</svg>
+</div>
+<span class="text-xs font-medium text-slate-500 truncate" id="successHandleDisplay">@username</span>
+</div>
+</div>
+<!-- Classic Instagram Stats Row with Animated Odometer -->
+<div class="grid grid-cols-3 divide-x divide-slate-100 py-2.5 px-1 bg-slate-50/80 rounded-xl border border-slate-100 text-center">
+<div class="flex flex-col items-center">
+<span class="font-headline font-extrabold text-sm text-slate-900" id="successPostsCount">142</span>
+<span class="text-[11px] font-medium text-slate-500">Posts</span>
+</div>
+<div class="flex flex-col items-center relative px-1">
+<div class="flex items-center gap-1">
+<span class="font-headline font-extrabold text-sm text-slate-900 tabular-nums transition-all" id="successLiveFollowerCount">1,840</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+</div>
+<span class="text-[11px] font-medium text-emerald-600 font-semibold">Followers</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline font-extrabold text-sm text-slate-900" id="successFollowingCount">380</span>
+<span class="text-[11px] font-medium text-slate-500">Following</span>
+</div>
+</div>
+<!-- Live Added Followers Pill Notification -->
+<div class="flex items-center justify-between px-2.5 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200/70">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+<span class="text-xs font-bold text-emerald-800" id="successBadgeAmount">+10,000 Live Added</span>
+</div>
+<span class="text-[10px] font-semibold text-emerald-700 uppercase tracking-wider bg-white/80 px-2 py-0.5 rounded-md border border-emerald-200/50">Verified</span>
+</div>
+<!-- Bio & Mutual Friends Snippet -->
+<div class="flex flex-col gap-1 text-xs text-slate-600 px-0.5">
+<p class="leading-relaxed" id="successBioDisplay">Creator • Digital lifestyle &amp; tech enthusiast 🚀</p>
+<div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
+<span class="material-symbols-outlined text-[13px] text-slate-400">group</span>
+<span>Followed by 12 mutual friends</span>
+</div>
+</div>
+</div>
+<!-- Action Button: Boost Another Account -->
+<button class="relative group w-full py-4 px-4 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-white font-headline text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/25 hover:shadow-primary/40 active:scale-95 transition-all overflow-hidden cursor-pointer mt-1" id="resetFlowBtn" onclick="resetToStep1()" type="button">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></div>
+<span class="relative z-10 flex items-center justify-center gap-2 pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>BOOST ANOTHER ACCOUNT</span>
+</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<script>
+  // Global Application State & Methods
+  let currentUsername = '@instagram_user';
+  let currentFollowerCount = 10000;
+  let currentProfile = null;
+  let initialBaseFollowers = 1840;
+  let requirementFulfilled = false;
+  let isRequirementVerifying = false;
+  let isFetchingProfile = false;
+  let dispatchTimer = null;
+  let successCounterTimer = null;
+
+  // Format count into 'k' or 'M' without trailing zeros
+  function formatFollowerCount(count) {
+    if (count >= 1000000) {
+      const formatted = (count / 1000000).toString();
+      return formatted + 'M';
+    } else if (count >= 1000) {
+      const formatted = (count / 1000).toString();
+      return formatted + 'k';
+    }
+    return count.toString();
+  }
+
+  function showStep(stepKey) {
+    const s1 = document.getElementById('step-1');
+    const s2 = document.getElementById('step-2');
+    const sReq = document.getElementById('step-requirement');
+    const s3 = document.getElementById('step-3');
+    const s4 = document.getElementById('step-4');
+
+    if (s1) s1.style.display = (stepKey === '1' || stepKey === 1) ? 'flex' : 'none';
+    if (s2) s2.style.display = (stepKey === '2' || stepKey === 2) ? 'flex' : 'none';
+    if (sReq) sReq.style.display = (stepKey === 'requirement' || stepKey === '2.5') ? 'flex' : 'none';
+    if (s3) s3.style.display = (stepKey === '3' || stepKey === 3) ? 'flex' : 'none';
+    if (s4) s4.style.display = (stepKey === '4' || stepKey === 4) ? 'flex' : 'none';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function applyProfileToUI() {
+    if (!currentProfile) return;
+    const cleanName = (currentProfile.name || currentProfile.username || 'User').trim();
+    const handle = '@' + currentProfile.username;
+
+    // Step 2 profile card elements
+    const handleDisplay = document.getElementById('igHandleDisplay');
+    const nameDisplay = document.getElementById('igDisplayName');
+    const avatarDisplay = document.getElementById('igAvatarDisplay');
+    const verifiedBadge = document.getElementById('igVerifiedBadge');
+    const postsCount = document.getElementById('igPostsCount');
+    const followersCount = document.getElementById('igFollowersCount');
+    const followingCount = document.getElementById('igFollowingCount');
+    const bioDisplay = document.getElementById('igBioDisplay');
+
+    if (handleDisplay) handleDisplay.textContent = handle;
+    if (nameDisplay) nameDisplay.textContent = cleanName;
+    if (verifiedBadge) {
+      verifiedBadge.style.display = currentProfile.is_verified ? 'inline-block' : 'none';
+    }
+    if (postsCount) postsCount.textContent = (currentProfile.posts || 0).toLocaleString('en-US');
+    if (followersCount) followersCount.textContent = (currentProfile.followers || 0).toLocaleString('en-US');
+    if (followingCount) followingCount.textContent = (currentProfile.following || 0).toLocaleString('en-US');
+    if (bioDisplay && currentProfile.bio) bioDisplay.textContent = currentProfile.bio;
+
+    if (avatarDisplay) {
+      if (currentProfile.avatar) {
+        avatarDisplay.innerHTML = `<img src="${currentProfile.avatar}" alt="${currentProfile.username}" class="w-full h-full object-cover rounded-full" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='/api/avatar-proxy?url=' + encodeURIComponent('${currentProfile.avatar}');">`;
+      } else {
+        avatarDisplay.textContent = cleanName.charAt(0).toUpperCase();
+      }
+    }
+
+    // Step 3 preview account
+    const step3TargetAccount = document.getElementById('step3TargetAccount');
+    if (step3TargetAccount) step3TargetAccount.textContent = handle;
+  }
+
+  async function goToStep2() {
+    if (isFetchingProfile) return;
+
+    const input = document.getElementById('usernameInput');
+    let val = input ? input.value.trim() : '';
+
+    if (!val) {
+      val = 'instagram';
+    }
+    const cleanUser = val.replace(/^@/, '').trim();
+    currentUsername = '@' + cleanUser;
+
+    const btn = document.getElementById('btn-continue');
+    const btnText = document.getElementById('btnContinueText');
+    const btnIcon = document.getElementById('btnContinueIcon');
+    const btnSpinner = document.getElementById('btnContinueSpinner');
+
+    isFetchingProfile = true;
+    if (btn) btn.disabled = true;
+    if (btnText) btnText.classList.add('hidden');
+    if (btnIcon) btnIcon.classList.add('hidden');
+    if (btnSpinner) {
+      btnSpinner.classList.remove('hidden');
+      btnSpinner.classList.add('flex');
+    }
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 7000);
+
+      const response = await fetch(`/api/profile?username=${encodeURIComponent(cleanUser)}`, {
+        headers: {
+          'X-Requested-With': 'InstaGrowthApp'
+        },
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+      const data = await response.json();
+
+      if (data && data.status === 'success' && data.profile) {
+        currentProfile = data.profile;
+        currentUsername = '@' + (currentProfile.username || cleanUser);
+        if (typeof currentProfile.followers === 'number' && currentProfile.followers > 0) {
+          initialBaseFollowers = currentProfile.followers;
+        }
+      } else {
+        // Fallback default if not found or API error
+        currentProfile = {
+          username: cleanUser,
+          name: cleanUser.charAt(0).toUpperCase() + cleanUser.slice(1),
+          bio: 'Creator • Digital lifestyle & tech enthusiast 🚀',
+          avatar: '',
+          is_verified: false,
+          posts: 142,
+          followers: 1840,
+          following: 380
+        };
+        initialBaseFollowers = 1840;
+      }
+    } catch (err) {
+      console.warn('Profile fetch error, using fallback:', err);
+      currentProfile = {
+        username: cleanUser,
+        name: cleanUser.charAt(0).toUpperCase() + cleanUser.slice(1),
+        bio: 'Creator • Digital lifestyle & tech enthusiast 🚀',
+        avatar: '',
+        is_verified: false,
+        posts: 142,
+        followers: 1840,
+        following: 380
+      };
+      initialBaseFollowers = 1840;
+    } finally {
+      isFetchingProfile = false;
+      if (btn) btn.disabled = false;
+      if (btnText) btnText.classList.remove('hidden');
+      if (btnIcon) btnIcon.classList.remove('hidden');
+      if (btnSpinner) {
+        btnSpinner.classList.add('hidden');
+        btnSpinner.classList.remove('flex');
+      }
+    }
+
+    applyProfileToUI();
+    showStep(2);
+  }
+
+  function updateActiveSelection(amount) {
+    currentFollowerCount = parseInt(amount, 10);
+    const compactFormat = formatFollowerCount(currentFollowerCount);
+    
+    // Update Step 2 bottom button label with compact 'k'/'M' format
+    const btnLabel = document.getElementById('step2BtnLabel');
+    if (btnLabel) {
+      btnLabel.textContent = `CONTINUE WITH ${compactFormat} FOLLOWERS`;
+    }
+
+    const cards = document.querySelectorAll('.package-card');
+    cards.forEach(card => {
+      const val = parseInt(card.getAttribute('data-val'), 10);
+      const statusDot = card.querySelector('.status-indicator');
+      const numSpan = card.querySelector('.package-amount');
+      const pill = card.querySelector('.badge-pill');
+
+      if (val === currentFollowerCount) {
+        card.classList.add('border-primary', 'border-2', 'shadow-[0_4px_16px_rgba(183,0,79,0.12)]', 'bg-white', 'active-package');
+        card.classList.remove('border-slate-200/90', 'border', 'bg-surface-container-lowest', 'shadow-sm');
+        if (statusDot) {
+          statusDot.className = 'status-indicator w-2.5 h-2.5 rounded-full bg-primary animate-pulse transition-all';
+        }
+        if (numSpan) {
+          numSpan.classList.add('text-primary');
+          numSpan.classList.remove('text-slate-900');
+        }
+        if (pill) {
+          pill.className = 'badge-pill text-[11px] font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white transition-colors';
+        }
+      } else {
+        card.classList.remove('border-primary', 'border-2', 'shadow-[0_4px_16px_rgba(183,0,79,0.12)]', 'active-package');
+        card.classList.add('border-slate-200/90', 'border', 'bg-surface-container-lowest', 'shadow-sm');
+        if (statusDot) {
+          statusDot.className = 'status-indicator w-2 h-2 rounded-full bg-slate-300 transition-all';
+        }
+        if (numSpan) {
+          numSpan.classList.remove('text-primary');
+          numSpan.classList.add('text-slate-900');
+        }
+        if (pill) {
+          pill.className = 'badge-pill text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 transition-colors';
+        }
+      }
+    });
+  }
+
+  // Transitions to the Requirement screen (Step 2.5)
+  function goToRequirementScreen() {
+    const compactFormat = formatFollowerCount(currentFollowerCount);
+    
+    // Set Header/Title: "Get [formatted_count] Followers (requirement)"
+    const reqTitle = document.getElementById('requirementTitle');
+    if (reqTitle) {
+      reqTitle.textContent = `Get ${compactFormat} Followers (requirement)`;
+    }
+
+    // Reset button state
+    requirementFulfilled = false;
+    isRequirementVerifying = false;
+
+    const actionBtn = document.getElementById('requirementActionBtn');
+    const normalContent = document.getElementById('reqBtnNormalContent');
+    const loadingContent = document.getElementById('reqBtnLoadingContent');
+    const readyContent = document.getElementById('reqBtnReadyContent');
+    const readyLabel = document.getElementById('reqBtnReadyLabel');
+
+    if (actionBtn) {
+      actionBtn.disabled = false;
+      actionBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+    }
+    if (normalContent) normalContent.classList.remove('hidden');
+    if (loadingContent) loadingContent.classList.add('hidden');
+    if (readyContent) readyContent.classList.add('hidden');
+    if (readyLabel) {
+      readyLabel.textContent = `RECEIVE ${compactFormat} FOLLOWERS NOW`;
+    }
+
+    showStep('requirement');
+  }
+
+  // Handle requirement button click
+  function handleRequirementClick() {
+    if (isRequirementVerifying) return;
+
+    if (requirementFulfilled) {
+      // Step already verified -> Start dispatch
+      startTenSecondDispatch();
+      return;
+    }
+
+    // Step A: Immediately open Instagram profile in new tab / app
+    try {
+      window.open('https://www.instagram.com/igluafile', '_blank');
+    } catch (e) {
+      console.log('Window open fallback', e);
+    }
+
+    // Step B: Enter 5-second loading state (only sleek spinner, no seconds countdown text)
+    isRequirementVerifying = true;
+    const actionBtn = document.getElementById('requirementActionBtn');
+    const normalContent = document.getElementById('reqBtnNormalContent');
+    const loadingContent = document.getElementById('reqBtnLoadingContent');
+    const readyContent = document.getElementById('reqBtnReadyContent');
+    const readyLabel = document.getElementById('reqBtnReadyLabel');
+    const compactFormat = formatFollowerCount(currentFollowerCount);
+
+    if (actionBtn) {
+      actionBtn.disabled = true;
+      actionBtn.classList.add('opacity-90', 'cursor-not-allowed');
+    }
+    if (normalContent) normalContent.classList.add('hidden');
+    if (loadingContent) {
+      loadingContent.classList.remove('hidden');
+      loadingContent.classList.add('flex');
+    }
+    if (readyContent) readyContent.classList.add('hidden');
+
+    // Exactly 5 seconds timer
+    setTimeout(() => {
+      isRequirementVerifying = false;
+      requirementFulfilled = true;
+
+      if (actionBtn) {
+        actionBtn.disabled = false;
+        actionBtn.classList.remove('opacity-90', 'cursor-not-allowed');
+        actionBtn.classList.add('shadow-primary/40', 'scale-[1.01]');
+      }
+      if (loadingContent) {
+        loadingContent.classList.add('hidden');
+        loadingContent.classList.remove('flex');
+      }
+      if (readyContent) {
+        readyContent.classList.remove('hidden');
+        readyContent.classList.add('flex');
+      }
+      if (readyLabel) {
+        readyLabel.textContent = `RECEIVE ${compactFormat} FOLLOWERS NOW`;
+      }
+    }, 5000);
+  }
+
+  function startTenSecondDispatch() {
+    showStep(3);
+
+    const compactFormat = formatFollowerCount(currentFollowerCount);
+    const step3TargetAccount = document.getElementById('step3TargetAccount');
+    const streamTarget = document.getElementById('streamTarget');
+    const streamCounter = document.getElementById('streamCounter');
+    const step3ProgressBar = document.getElementById('step3ProgressBar');
+    const step3ProgressPercent = document.getElementById('step3ProgressPercent');
+    const step3StatusText = document.getElementById('step3StatusText');
+    const step3SubText = document.getElementById('step3SubText');
+    const timerCount = document.getElementById('timerCount');
+    const countdownCircle = document.getElementById('countdownCircle');
+    const step3SpeedRate = document.getElementById('step3SpeedRate');
+
+    if (step3TargetAccount) step3TargetAccount.textContent = currentUsername;
+    if (streamTarget) streamTarget.textContent = `/ ${compactFormat}`;
+    if (streamCounter) streamCounter.textContent = '0';
+    if (step3ProgressBar) step3ProgressBar.style.width = '0%';
+    if (step3ProgressPercent) step3ProgressPercent.textContent = '0%';
+    if (step3StatusText) step3StatusText.textContent = 'Connecting to Instagram API Cluster...';
+    if (step3SubText) step3SubText.textContent = 'Initializing secure handshake socket';
+    if (timerCount) timerCount.textContent = '10s';
+
+    const totalDuration = 10000;
+    const startTime = Date.now();
+    const circleCircumference = 263.89;
+
+    if (countdownCircle) {
+      countdownCircle.style.strokeDashoffset = circleCircumference;
+    }
+
+    if (dispatchTimer) clearInterval(dispatchTimer);
+
+    dispatchTimer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / totalDuration, 1);
+      const percent = Math.floor(progress * 100);
+
+      const secondsRemaining = Math.max(0, Math.ceil((totalDuration - elapsed) / 1000));
+      if (timerCount) timerCount.textContent = secondsRemaining + 's';
+      if (countdownCircle) {
+        countdownCircle.style.strokeDashoffset = circleCircumference - (progress * circleCircumference);
+      }
+
+      if (step3ProgressBar) step3ProgressBar.style.width = percent + '%';
+      if (step3ProgressPercent) step3ProgressPercent.textContent = percent + '%';
+
+      const currentStream = Math.floor(progress * currentFollowerCount);
+      if (streamCounter) {
+        if (currentStream >= 1000) {
+          streamCounter.textContent = formatFollowerCount(currentStream);
+        } else {
+          streamCounter.textContent = currentStream.toLocaleString('en-US');
+        }
+      }
+
+      if (progress < 0.25) {
+        if (step3StatusText) step3StatusText.textContent = 'Connecting to Instagram API Cluster...';
+        if (step3SubText) step3SubText.textContent = 'Allocating high-speed proxy tunnel';
+        if (step3SpeedRate) step3SpeedRate.textContent = '1,200/sec';
+      } else if (progress < 0.5) {
+        if (step3StatusText) step3StatusText.textContent = `Verifying account ${currentUsername}...`;
+        if (step3SubText) step3SubText.textContent = 'Target profile found & verified active';
+        if (step3SpeedRate) step3SpeedRate.textContent = '2,480/sec';
+      } else if (progress < 0.75) {
+        if (step3StatusText) step3StatusText.textContent = `Allocating ${compactFormat} high-retention profiles...`;
+        if (step3SubText) step3SubText.textContent = 'Injecting organic follower distribution buffer';
+        if (step3SpeedRate) step3SpeedRate.textContent = '3,840/sec';
+      } else {
+        if (step3StatusText) step3StatusText.textContent = 'Finalizing packet transfer & delivery...';
+        if (step3SubText) step3SubText.textContent = 'Synching engagement tokens';
+        if (step3SpeedRate) step3SpeedRate.textContent = '4,150/sec';
+      }
+
+      if (progress >= 1) {
+        clearInterval(dispatchTimer);
+        if (streamCounter) streamCounter.textContent = compactFormat;
+        if (countdownCircle) countdownCircle.style.strokeDashoffset = '0';
+        if (timerCount) timerCount.textContent = '0s';
+
+        setTimeout(() => {
+          renderSuccessScreen();
+        }, 300);
+      }
+    }, 50);
+  }
+
+  function renderSuccessScreen() {
+    const compactFormat = formatFollowerCount(currentFollowerCount);
+    const cleanName = currentUsername.replace('@', '');
+
+    // Bind profile card info on Success Screen
+    const successHandleDisplay = document.getElementById('successHandleDisplay');
+    const successDisplayName = document.getElementById('successDisplayName');
+    const successAvatarDisplay = document.getElementById('successAvatarDisplay');
+    const successBadgeAmount = document.getElementById('successBadgeAmount');
+    const liveFollowerEl = document.getElementById('successLiveFollowerCount');
+    const successVerifiedBadge = document.getElementById('successVerifiedBadge');
+    const successPostsCount = document.getElementById('successPostsCount');
+    const successFollowingCount = document.getElementById('successFollowingCount');
+    const successBioDisplay = document.getElementById('successBioDisplay');
+
+    if (successHandleDisplay) successHandleDisplay.textContent = currentUsername;
+    if (successDisplayName) {
+      successDisplayName.textContent = currentProfile ? (currentProfile.name || currentProfile.username) : (cleanName.charAt(0).toUpperCase() + cleanName.slice(1));
+    }
+    if (successVerifiedBadge) {
+      successVerifiedBadge.style.display = (currentProfile && currentProfile.is_verified) ? 'inline-block' : 'none';
+    }
+    if (successPostsCount && currentProfile) {
+      successPostsCount.textContent = (currentProfile.posts || 0).toLocaleString('en-US');
+    }
+    if (successFollowingCount && currentProfile) {
+      successFollowingCount.textContent = (currentProfile.following || 0).toLocaleString('en-US');
+    }
+    if (successBioDisplay && currentProfile && currentProfile.bio) {
+      successBioDisplay.textContent = currentProfile.bio;
+    }
+    if (successAvatarDisplay) {
+      if (currentProfile && currentProfile.avatar) {
+        successAvatarDisplay.innerHTML = `<img src="${currentProfile.avatar}" alt="${cleanName}" class="w-full h-full object-cover rounded-full" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='/api/avatar-proxy?url=' + encodeURIComponent('${currentProfile.avatar}');">`;
+      } else {
+        successAvatarDisplay.textContent = cleanName.charAt(0).toUpperCase();
+      }
+    }
+    if (successBadgeAmount) successBadgeAmount.textContent = `+${currentFollowerCount.toLocaleString('en-US')} Live Added`;
+
+    showStep(4);
+
+    // High-speed animated follower odometer animation
+    if (successCounterTimer) clearInterval(successCounterTimer);
+
+    const startCount = initialBaseFollowers;
+    const targetCount = startCount + currentFollowerCount;
+    const animDuration = 2200; // 2.2 seconds fast ticker
+    const animStartTime = Date.now();
+
+    if (liveFollowerEl) liveFollowerEl.textContent = startCount.toLocaleString('en-US');
+
+    successCounterTimer = setInterval(() => {
+      const now = Date.now();
+      const elapsed = now - animStartTime;
+      const progress = Math.min(elapsed / animDuration, 1);
+
+      // Ease-out cubic calculation for realistic deceleration
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentTick = Math.floor(startCount + (targetCount - startCount) * easeOut);
+
+      if (liveFollowerEl) {
+        liveFollowerEl.textContent = currentTick.toLocaleString('en-US');
+      }
+
+      if (progress >= 1) {
+        clearInterval(successCounterTimer);
+        if (liveFollowerEl) {
+          liveFollowerEl.textContent = targetCount.toLocaleString('en-US');
+        }
+      }
+    }, 25);
+  }
+
+  function resetToStep1() {
+    if (successCounterTimer) clearInterval(successCounterTimer);
+    if (dispatchTimer) clearInterval(dispatchTimer);
+
+    const input = document.getElementById('usernameInput');
+    if (input) input.value = '';
+    currentUsername = '@instagram_user';
+    currentProfile = null;
+    initialBaseFollowers = 1840;
+    requirementFulfilled = false;
+    isRequirementVerifying = false;
+    updateActiveSelection(10000);
+    showStep(1);
+  }
+
+  // Ensure robust listeners attach immediately and on load
+  function initListeners() {
+    const continueBtn = document.getElementById('btn-continue');
+    if (continueBtn && !continueBtn.dataset.bound) {
+      continueBtn.dataset.bound = 'true';
+      continueBtn.addEventListener('click', goToStep2);
+    }
+
+    const input = document.getElementById('usernameInput');
+    if (input && !input.dataset.bound) {
+      input.dataset.bound = 'true';
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          goToStep2();
+        }
+      });
+    }
+
+    const step2Btn = document.getElementById('step2DispatchBtn');
+    if (step2Btn && !step2Btn.dataset.bound) {
+      step2Btn.dataset.bound = 'true';
+      step2Btn.addEventListener('click', goToRequirementScreen);
+    }
+
+    const reqBtn = document.getElementById('requirementActionBtn');
+    if (reqBtn && !reqBtn.dataset.bound) {
+      reqBtn.dataset.bound = 'true';
+      reqBtn.addEventListener('click', handleRequirementClick);
+    }
+
+    const resetBtn = document.getElementById('resetFlowBtn');
+    if (resetBtn && !resetBtn.dataset.bound) {
+      resetBtn.dataset.bound = 'true';
+      resetBtn.addEventListener('click', resetToStep1);
+    }
+  }
+
+  initListeners();
+  document.addEventListener('DOMContentLoaded', initListeners);
+  window.addEventListener('load', initListeners);
+</script>
+</body></html>
