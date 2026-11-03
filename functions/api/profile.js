@@ -68,6 +68,37 @@ function isAuthorizedOrigin(request) {
   return { authorized: true };
 }
 
+function extractInstagramUsername(input) {
+  if (!input) return '';
+  let str = input.trim();
+
+  if (str.includes('instagram.com') || str.includes('instagr.am') || str.startsWith('http://') || str.startsWith('https://')) {
+    try {
+      let urlStr = str;
+      if (!urlStr.startsWith('http://') && !urlStr.startsWith('https://')) {
+        urlStr = 'https://' + urlStr;
+      }
+      const parsed = new URL(urlStr);
+      const segments = parsed.pathname.split('/').filter(s => Boolean(s.trim()));
+      if (segments.length > 0) {
+        let seg = segments[0];
+        if ((seg === '_u' || seg === 'profile') && segments[1]) {
+          seg = segments[1];
+        }
+        return seg.replace(/^@/, '').trim();
+      }
+    } catch (e) {
+      const match = str.match(/(?:instagram\.com|instagr\.am)\/([a-zA-Z0-9._]+)/i);
+      if (match && match[1]) {
+        return match[1].trim();
+      }
+    }
+  }
+
+  let clean = str.split('?')[0].split('#')[0].replace(/^\/+|\/+$/g, '').replace(/^@/, '').trim();
+  return clean;
+}
+
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -95,8 +126,8 @@ export async function onRequestGet(context) {
     });
   }
 
-  const username = url.searchParams.get('username') || '';
-  const cleanUser = username.replace(/^@/, '').trim();
+  const rawInput = url.searchParams.get('username') || '';
+  const cleanUser = extractInstagramUsername(rawInput);
 
   if (!cleanUser) {
     return new Response(JSON.stringify({ status: 'error', message: 'Username is required' }), {

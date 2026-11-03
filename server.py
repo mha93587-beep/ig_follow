@@ -48,6 +48,26 @@ PROFILE_CACHE = {}
 CACHE_TTL = 900  # 15 minutes
 
 
+def extract_instagram_username(input_str):
+    if not input_str:
+        return ""
+    s = input_str.strip()
+    if "instagram.com" in s or "instagr.am" in s or s.startswith("http://") or s.startswith("https://"):
+        try:
+            if not s.startswith("http://") and not s.startswith("https://"):
+                s = "https://" + s
+            parsed = urlparse(s)
+            parts = [p for p in parsed.path.split("/") if p.strip()]
+            if parts:
+                seg = parts[0]
+                if seg in ("_u", "profile") and len(parts) > 1:
+                    seg = parts[1]
+                return seg.lstrip("@").strip()
+        except Exception:
+            pass
+    clean = s.split("?")[0].split("#")[0].strip("/").lstrip("@").strip()
+    return clean
+
 class RequestHandler(BaseHTTPRequestHandler):
     def send_cors_headers(self, origin=None):
         req_origin = origin or self.headers.get("Origin") or f"http://{self.headers.get('Host', 'localhost')}"
@@ -181,15 +201,10 @@ class RequestHandler(BaseHTTPRequestHandler):
             }, 401, head_only=head_only)
             return
 
-        username = query.get("username", [""])[0].strip()
-        if not username:
-            self.send_json({"status": "error", "message": "Username is required"}, 400, head_only=head_only)
-            return
-
-        # Clean username (strip @ or whitespace)
-        clean_user = username.lstrip("@").strip()
+        raw_username = query.get("username", [""])[0].strip()
+        clean_user = extract_instagram_username(raw_username)
         if not clean_user:
-            self.send_json({"status": "error", "message": "Invalid username"}, 400, head_only=head_only)
+            self.send_json({"status": "error", "message": "Username is required"}, 400, head_only=head_only)
             return
 
         # Check Cache

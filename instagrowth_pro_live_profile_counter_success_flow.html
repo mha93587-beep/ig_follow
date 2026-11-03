@@ -574,16 +574,46 @@ U
     if (step3TargetAccount) step3TargetAccount.textContent = handle;
   }
 
+  function extractInstagramUsername(input) {
+    if (!input) return 'instagram';
+    let str = input.trim();
+
+    // Check if input is a URL or contains domain/path
+    if (str.includes('instagram.com') || str.includes('instagr.am') || str.startsWith('http://') || str.startsWith('https://')) {
+      try {
+        let urlStr = str;
+        if (!urlStr.startsWith('http://') && !urlStr.startsWith('https://')) {
+          urlStr = 'https://' + urlStr;
+        }
+        const parsed = new URL(urlStr);
+        const segments = parsed.pathname.split('/').filter(s => Boolean(s.trim()));
+        if (segments.length > 0) {
+          let seg = segments[0];
+          if ((seg === '_u' || seg === 'profile') && segments[1]) {
+            seg = segments[1];
+          }
+          return seg.replace(/^@/, '').trim();
+        }
+      } catch (e) {
+        const match = str.match(/(?:instagram\.com|instagr\.am)\/([a-zA-Z0-9._]+)/i);
+        if (match && match[1]) {
+          return match[1].trim();
+        }
+      }
+    }
+
+    // Clean query parameters, hash, slashes, and leading '@'
+    let clean = str.split('?')[0].split('#')[0].replace(/^\/+|\/+$/g, '').replace(/^@/, '').trim();
+    return clean || 'instagram';
+  }
+
   async function goToStep2() {
     if (isFetchingProfile) return;
 
     const input = document.getElementById('usernameInput');
     let val = input ? input.value.trim() : '';
 
-    if (!val) {
-      val = 'instagram';
-    }
-    const cleanUser = val.replace(/^@/, '').trim();
+    const cleanUser = extractInstagramUsername(val);
     currentUsername = '@' + cleanUser;
 
     const btn = document.getElementById('btn-continue');
