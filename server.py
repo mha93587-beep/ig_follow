@@ -89,6 +89,12 @@ class RequestHandler(BaseHTTPRequestHandler):
         path = parsed.path
         query = parse_qs(parsed.query)
 
+        # API: Config endpoint
+        if path == "/api/config":
+            mode = os.environ.get("WEB_MODE", "PUBLIC").strip()
+            self.send_json({"status": "success", "web_mode": mode}, head_only=head_only)
+            return
+
         # API: SearchApi Instagram Profile Fetch (Domain-Protected)
         if path == "/api/profile":
             self.handle_profile_api(query, head_only=head_only)
@@ -213,7 +219,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         if cache_key in PROFILE_CACHE:
             cached_time, cached_data = PROFILE_CACHE[cache_key]
             if now - cached_time < CACHE_TTL:
-                self.send_json({"status": "success", "cached": True, "profile": cached_data}, head_only=head_only)
+                mode = os.environ.get("WEB_MODE", "PUBLIC").strip()
+                self.send_json({"status": "success", "web_mode": mode, "cached": True, "profile": cached_data}, head_only=head_only)
                 return
 
         # Check API Key
@@ -255,8 +262,9 @@ class RequestHandler(BaseHTTPRequestHandler):
 
             # Cache the result
             PROFILE_CACHE[cache_key] = (now, extracted)
+            mode = os.environ.get("WEB_MODE", "PUBLIC").strip()
 
-            self.send_json({"status": "success", "cached": False, "profile": extracted}, head_only=head_only)
+            self.send_json({"status": "success", "web_mode": mode, "cached": False, "profile": extracted}, head_only=head_only)
 
         except urllib.error.HTTPError as e:
             try:

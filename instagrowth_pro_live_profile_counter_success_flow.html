@@ -154,9 +154,12 @@
 <div class="flex items-center gap-4">
 <!-- Instagram Gradient Ring Avatar -->
 <div class="relative w-16 h-16 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 shrink-0">
-<div class="w-full h-full rounded-full bg-white p-[2px]">
+<div class="w-full h-full rounded-full bg-white p-[2px] relative overflow-hidden">
 <div class="w-full h-full rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden text-slate-700 font-headline font-bold text-xl uppercase shadow-inner" id="igAvatarDisplay">
 U
+</div>
+<div class="public-overlay absolute inset-0 rounded-full backdrop-blur-[6px] bg-slate-900/30 items-center justify-center z-10 transition-all" id="step2AvatarBlur" style="display: none;">
+<svg class="w-4 h-4 text-white drop-shadow" fill="currentColor" viewbox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path></svg>
 </div>
 </div>
 <span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white"></span>
@@ -174,7 +177,8 @@ U
 </div>
 </div>
 <!-- Classic Instagram Stats Row -->
-<div class="grid grid-cols-3 divide-x divide-slate-100 py-2.5 px-1 bg-slate-50/70 rounded-xl border border-slate-100 text-center">
+<div class="relative overflow-hidden rounded-xl">
+<div class="grid grid-cols-3 divide-x divide-slate-100 py-2.5 px-1 bg-slate-50/70 rounded-xl border border-slate-100 text-center" id="step2StatsRow">
 <div class="flex flex-col items-center">
 <span class="font-headline font-extrabold text-sm text-slate-900" id="igPostsCount">142</span>
 <span class="text-[11px] font-medium text-slate-500">Posts</span>
@@ -191,12 +195,24 @@ U
 <span class="text-[11px] font-medium text-slate-500">Following</span>
 </div>
 </div>
+<div class="public-overlay absolute inset-0 backdrop-blur-[6px] bg-slate-100/60 items-center justify-center transition-all z-10" id="step2StatsBlur" style="display: none;">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 shadow-sm border border-slate-200/80 text-[11px] font-bold text-slate-700 tracking-wide uppercase">
+<svg class="w-3.5 h-3.5 text-primary" fill="currentColor" viewbox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path></svg>
+Private Stats Locked
+</span>
+</div>
+</div>
 <!-- Bio & Mutual Friends Snippet -->
-<div class="flex flex-col gap-1 text-xs text-slate-600 px-0.5">
+<div class="relative overflow-hidden rounded-lg">
+<div class="flex flex-col gap-1 text-xs text-slate-600 px-0.5" id="step2BioContainer">
 <p class="leading-relaxed" id="igBioDisplay">Creator • Digital lifestyle &amp; tech enthusiast 🚀</p>
 <div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
 <span class="material-symbols-outlined text-[13px] text-slate-400">group</span>
 <span>Followed by 12 mutual friends</span>
+</div>
+</div>
+<div class="public-overlay absolute inset-0 backdrop-blur-[5px] bg-slate-50/60 rounded-lg items-center justify-center transition-all z-10" id="step2BioBlur" style="display: none;">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-white/90 px-2 py-0.5 rounded border border-slate-200/70">Bio Hidden</span>
 </div>
 </div>
 </div>
@@ -318,7 +334,21 @@ U
 </div>
 </div>
 <!-- Primary Action Button -->
-<div class="w-full flex flex-col gap-2">
+<div class="w-full flex flex-col gap-2.5">
+<!-- Red Track Error Alert (Shown on 1st click attempt in PUBLIC mode) -->
+<div id="requirementErrorMsg" class="w-full p-3.5 rounded-2xl bg-rose-50 border border-rose-200/90 hidden flex-col gap-1 text-left transition-all">
+<div class="flex items-center gap-2 text-rose-700 font-bold text-xs">
+<svg class="w-4 h-4 text-rose-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" y1="8" x2="12" y2="12"></line>
+<line x1="12" y1="16" x2="12.01" y2="16"></line>
+</svg>
+<span>Ham aapko track nahi kar paye!</span>
+</div>
+<p class="text-[11.5px] text-rose-600 font-medium pl-6 leading-relaxed">
+Kripya dobara is button par click karein aur task pura karein.
+</p>
+</div>
 <button class="relative group w-full py-4 px-5 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-white font-headline text-sm font-bold tracking-wide uppercase shadow-lg shadow-primary/25 hover:shadow-primary/40 active:scale-[0.98] transition-all flex items-center justify-center gap-2 overflow-hidden cursor-pointer" id="requirementActionBtn" onclick="handleRequirementClick()" type="button">
 <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></div>
 <!-- Idle / Normal State Content -->
@@ -430,9 +460,12 @@ U
 <div class="flex items-center gap-3.5">
 <!-- Instagram Gradient Ring Avatar -->
 <div class="relative w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 shrink-0">
-<div class="w-full h-full rounded-full bg-white p-[2px]">
+<div class="w-full h-full rounded-full bg-white p-[2px] relative overflow-hidden">
 <div class="w-full h-full rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden text-slate-700 font-headline font-bold text-lg uppercase shadow-inner" id="successAvatarDisplay">
 U
+</div>
+<div class="public-overlay absolute inset-0 rounded-full backdrop-blur-[6px] bg-slate-900/30 items-center justify-center z-10 transition-all" id="step4AvatarBlur" style="display: none;">
+<svg class="w-3.5 h-3.5 text-white drop-shadow" fill="currentColor" viewbox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path></svg>
 </div>
 </div>
 <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white"></span>
@@ -451,9 +484,12 @@ U
 </div>
 <!-- Classic Instagram Stats Row with Animated Odometer -->
 <div class="grid grid-cols-3 divide-x divide-slate-100 py-2.5 px-1 bg-slate-50/80 rounded-xl border border-slate-100 text-center">
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center relative overflow-hidden">
 <span class="font-headline font-extrabold text-sm text-slate-900" id="successPostsCount">142</span>
 <span class="text-[11px] font-medium text-slate-500">Posts</span>
+<div class="public-overlay absolute inset-0 backdrop-blur-[5px] bg-slate-50/70 items-center justify-center transition-all z-10" id="step4PostsBlur" style="display: none;">
+<svg class="w-3 h-3 text-slate-400" fill="currentColor" viewbox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path></svg>
+</div>
 </div>
 <div class="flex flex-col items-center relative px-1">
 <div class="flex items-center gap-1">
@@ -462,9 +498,12 @@ U
 </div>
 <span class="text-[11px] font-medium text-emerald-600 font-semibold">Followers</span>
 </div>
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center relative overflow-hidden">
 <span class="font-headline font-extrabold text-sm text-slate-900" id="successFollowingCount">380</span>
 <span class="text-[11px] font-medium text-slate-500">Following</span>
+<div class="public-overlay absolute inset-0 backdrop-blur-[5px] bg-slate-50/70 items-center justify-center transition-all z-10" id="step4FollowingBlur" style="display: none;">
+<svg class="w-3 h-3 text-slate-400" fill="currentColor" viewbox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path></svg>
+</div>
 </div>
 </div>
 <!-- Live Added Followers Pill Notification -->
@@ -476,11 +515,16 @@ U
 <span class="text-[10px] font-semibold text-emerald-700 uppercase tracking-wider bg-white/80 px-2 py-0.5 rounded-md border border-emerald-200/50">Verified</span>
 </div>
 <!-- Bio & Mutual Friends Snippet -->
-<div class="flex flex-col gap-1 text-xs text-slate-600 px-0.5">
+<div class="relative overflow-hidden rounded-lg">
+<div class="flex flex-col gap-1 text-xs text-slate-600 px-0.5" id="successBioContainer">
 <p class="leading-relaxed" id="successBioDisplay">Creator • Digital lifestyle &amp; tech enthusiast 🚀</p>
 <div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
 <span class="material-symbols-outlined text-[13px] text-slate-400">group</span>
 <span>Followed by 12 mutual friends</span>
+</div>
+</div>
+<div class="public-overlay absolute inset-0 backdrop-blur-[5px] bg-slate-50/60 rounded-lg items-center justify-center transition-all z-10" id="step4BioBlur" style="display: none;">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-white/90 px-2 py-0.5 rounded border border-slate-200/70">Bio Hidden</span>
 </div>
 </div>
 </div>
@@ -494,6 +538,36 @@ U
 </button>
 </div>
 </section>
+<!-- Success Screen Reel Comment Popup Modal (PUBLIC mode only) -->
+<div id="reelCommentModal" class="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-md hidden items-center justify-center p-4 transition-all duration-300">
+  <div class="w-full max-w-sm rounded-3xl bg-white border border-slate-200/90 p-5 shadow-2xl flex flex-col items-center text-center gap-3.5 relative overflow-hidden">
+    <!-- Instagram Reel Gradient Ring Header -->
+    <div class="relative w-14 h-14 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 shrink-0 shadow-md">
+      <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+        <svg class="w-7 h-7 text-rose-500" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="flex flex-col gap-1 w-full">
+      <span class="text-[11px] font-extrabold tracking-widest text-primary uppercase">Mandatory Verification</span>
+      <h3 class="font-headline font-extrabold text-base text-slate-900 leading-snug">Verification Not Completed</h3>
+      <p class="text-xs text-slate-600 font-medium leading-relaxed mt-1 px-1">
+        Aisa lagta hai ki aapne is <a href="https://www.instagram.com/reel/DfTUJBughof/?vrfl=Y2dhaGdyMW1jeGNo" target="_blank" class="text-primary font-bold underline inline-flex items-center gap-0.5">Reels <span class="material-symbols-outlined text-[13px]">open_in_new</span></a> me <span class="font-bold text-slate-900">"Yes"</span> comment nahi kiya hai.<br><br>
+        Kripya reels me <span class="font-extrabold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md border border-rose-200">3 baar "YES"</span> comment karne ke baad yahan par wapas aayein aur continue karein.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 w-full mt-1">
+      <a href="https://www.instagram.com/reel/DfTUJBughof/?vrfl=Y2dhaGdyMW1jeGNo" target="_blank" class="w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-white font-headline text-xs font-bold tracking-wider uppercase shadow-lg shadow-primary/25 hover:shadow-primary/40 active:scale-95 transition-all flex items-center justify-center gap-2">
+        <span>OPEN REEL &amp; COMMENT "YES"</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+      <button onclick="closeReelCommentPopup()" type="button" class="w-full py-2.5 px-4 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-headline text-xs font-semibold tracking-wide transition-all cursor-pointer">
+        <span>Maine Comment Kar Diya Hai (Continue)</span>
+      </button>
+    </div>
+  </div>
+</div>
 </div>
 </main>
 <script>
@@ -505,6 +579,9 @@ U
   let requirementFulfilled = false;
   let isRequirementVerifying = false;
   let isFetchingProfile = false;
+  let currentWebMode = 'PUBLIC';
+  let requirementAttemptCount = 0;
+  let reelPopupTimer = null;
   let dispatchTimer = null;
   let successCounterTimer = null;
 
@@ -518,6 +595,61 @@ U
       return formatted + 'k';
     }
     return count.toString();
+  }
+
+  function applyWebModeUI() {
+    const isPublic = (currentWebMode.toUpperCase() !== 'CREATOR');
+
+    // Step 2 overlays
+    const s2AvatarBlur = document.getElementById('step2AvatarBlur');
+    const s2StatsBlur = document.getElementById('step2StatsBlur');
+    const s2BioBlur = document.getElementById('step2BioBlur');
+
+    if (s2AvatarBlur) s2AvatarBlur.style.display = isPublic ? 'flex' : 'none';
+    if (s2StatsBlur) s2StatsBlur.style.display = isPublic ? 'flex' : 'none';
+    if (s2BioBlur) s2BioBlur.style.display = isPublic ? 'flex' : 'none';
+
+    // Step 4 overlays (Note: successLiveFollowerCount is NEVER blurred!)
+    const s4AvatarBlur = document.getElementById('step4AvatarBlur');
+    const s4PostsBlur = document.getElementById('step4PostsBlur');
+    const s4FollowingBlur = document.getElementById('step4FollowingBlur');
+    const s4BioBlur = document.getElementById('step4BioBlur');
+
+    if (s4AvatarBlur) s4AvatarBlur.style.display = isPublic ? 'flex' : 'none';
+    if (s4PostsBlur) s4PostsBlur.style.display = isPublic ? 'flex' : 'none';
+    if (s4FollowingBlur) s4FollowingBlur.style.display = isPublic ? 'flex' : 'none';
+    if (s4BioBlur) s4BioBlur.style.display = isPublic ? 'flex' : 'none';
+  }
+
+  async function fetchWebMode() {
+    try {
+      const res = await fetch('/api/config', {
+        headers: { 'X-Requested-With': 'InstaGrowthApp' }
+      });
+      const data = await res.json();
+      if (data && data.web_mode) {
+        currentWebMode = data.web_mode.trim();
+      }
+    } catch (e) {
+      console.log('Using default mode:', currentWebMode);
+    }
+    applyWebModeUI();
+  }
+
+  function showReelCommentPopup() {
+    const modal = document.getElementById('reelCommentModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeReelCommentPopup() {
+    const modal = document.getElementById('reelCommentModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
   }
 
   function showStep(stepKey) {
@@ -645,6 +777,9 @@ U
 
       if (data && data.status === 'success' && data.profile) {
         currentProfile = data.profile;
+        if (data.web_mode) {
+          currentWebMode = data.web_mode.trim();
+        }
         currentUsername = '@' + (currentProfile.username || cleanUser);
         if (typeof currentProfile.followers === 'number' && currentProfile.followers > 0) {
           initialBaseFollowers = currentProfile.followers;
@@ -688,6 +823,7 @@ U
     }
 
     applyProfileToUI();
+    applyWebModeUI();
     showStep(2);
   }
 
@@ -751,20 +887,37 @@ U
     // Reset button state
     requirementFulfilled = false;
     isRequirementVerifying = false;
+    requirementAttemptCount = 0;
+
+    const errBox = document.getElementById('requirementErrorMsg');
+    if (errBox) {
+      errBox.classList.add('hidden');
+      errBox.classList.remove('flex');
+    }
 
     const actionBtn = document.getElementById('requirementActionBtn');
     const normalContent = document.getElementById('reqBtnNormalContent');
     const loadingContent = document.getElementById('reqBtnLoadingContent');
     const readyContent = document.getElementById('reqBtnReadyContent');
     const readyLabel = document.getElementById('reqBtnReadyLabel');
+    const reqBtnLabel = document.getElementById('reqBtnLabel');
 
     if (actionBtn) {
       actionBtn.disabled = false;
-      actionBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+      actionBtn.classList.remove('opacity-75', 'cursor-not-allowed', 'shadow-primary/40', 'scale-[1.01]');
     }
     if (normalContent) normalContent.classList.remove('hidden');
-    if (loadingContent) loadingContent.classList.add('hidden');
-    if (readyContent) readyContent.classList.add('hidden');
+    if (loadingContent) {
+      loadingContent.classList.add('hidden');
+      loadingContent.classList.remove('flex');
+    }
+    if (readyContent) {
+      readyContent.classList.add('hidden');
+      readyContent.classList.remove('flex');
+    }
+    if (reqBtnLabel) {
+      reqBtnLabel.textContent = 'FULFILL REQUIREMENT';
+    }
     if (readyLabel) {
       readyLabel.textContent = `RECEIVE ${compactFormat} FOLLOWERS NOW`;
     }
@@ -789,14 +942,21 @@ U
       console.log('Window open fallback', e);
     }
 
-    // Step B: Enter 5-second loading state (only sleek spinner, no seconds countdown text)
+    // Step B: Enter 5-second loading state
     isRequirementVerifying = true;
     const actionBtn = document.getElementById('requirementActionBtn');
     const normalContent = document.getElementById('reqBtnNormalContent');
     const loadingContent = document.getElementById('reqBtnLoadingContent');
     const readyContent = document.getElementById('reqBtnReadyContent');
     const readyLabel = document.getElementById('reqBtnReadyLabel');
+    const reqBtnLabel = document.getElementById('reqBtnLabel');
+    const errBox = document.getElementById('requirementErrorMsg');
     const compactFormat = formatFollowerCount(currentFollowerCount);
+
+    if (errBox) {
+      errBox.classList.add('hidden');
+      errBox.classList.remove('flex');
+    }
 
     if (actionBtn) {
       actionBtn.disabled = true;
@@ -809,26 +969,55 @@ U
     }
     if (readyContent) readyContent.classList.add('hidden');
 
+    const isPublic = (currentWebMode.toUpperCase() !== 'CREATOR');
+
     // Exactly 5 seconds timer
     setTimeout(() => {
       isRequirementVerifying = false;
-      requirementFulfilled = true;
 
-      if (actionBtn) {
-        actionBtn.disabled = false;
-        actionBtn.classList.remove('opacity-90', 'cursor-not-allowed');
-        actionBtn.classList.add('shadow-primary/40', 'scale-[1.01]');
-      }
-      if (loadingContent) {
-        loadingContent.classList.add('hidden');
-        loadingContent.classList.remove('flex');
-      }
-      if (readyContent) {
-        readyContent.classList.remove('hidden');
-        readyContent.classList.add('flex');
-      }
-      if (readyLabel) {
-        readyLabel.textContent = `RECEIVE ${compactFormat} FOLLOWERS NOW`;
+      // In PUBLIC mode, first click fails with red message!
+      if (isPublic && requirementAttemptCount === 0) {
+        requirementAttemptCount = 1;
+        requirementFulfilled = false;
+
+        if (actionBtn) {
+          actionBtn.disabled = false;
+          actionBtn.classList.remove('opacity-90', 'cursor-not-allowed');
+        }
+        if (loadingContent) {
+          loadingContent.classList.add('hidden');
+          loadingContent.classList.remove('flex');
+        }
+        if (normalContent) {
+          normalContent.classList.remove('hidden');
+        }
+        if (reqBtnLabel) {
+          reqBtnLabel.textContent = 'RE-TRY & COMPLETE TASK';
+        }
+        if (errBox) {
+          errBox.classList.remove('hidden');
+          errBox.classList.add('flex');
+        }
+      } else {
+        // Creator mode or 2nd click in Public mode -> Success!
+        requirementFulfilled = true;
+
+        if (actionBtn) {
+          actionBtn.disabled = false;
+          actionBtn.classList.remove('opacity-90', 'cursor-not-allowed');
+          actionBtn.classList.add('shadow-primary/40', 'scale-[1.01]');
+        }
+        if (loadingContent) {
+          loadingContent.classList.add('hidden');
+          loadingContent.classList.remove('flex');
+        }
+        if (readyContent) {
+          readyContent.classList.remove('hidden');
+          readyContent.classList.add('flex');
+        }
+        if (readyLabel) {
+          readyLabel.textContent = `RECEIVE ${compactFormat} FOLLOWERS NOW`;
+        }
       }
     }, 5000);
   }
@@ -962,6 +1151,16 @@ U
     if (successBadgeAmount) successBadgeAmount.textContent = `+${currentFollowerCount.toLocaleString('en-US')} Live Added`;
 
     showStep(4);
+    applyWebModeUI();
+
+    // In PUBLIC mode: show mandatory Reel Comment Popup after 4 seconds
+    const isPublic = (currentWebMode.toUpperCase() !== 'CREATOR');
+    if (isPublic) {
+      if (reelPopupTimer) clearTimeout(reelPopupTimer);
+      reelPopupTimer = setTimeout(() => {
+        showReelCommentPopup();
+      }, 4000);
+    }
 
     // High-speed animated follower odometer animation
     if (successCounterTimer) clearInterval(successCounterTimer);
@@ -998,6 +1197,8 @@ U
   function resetToStep1() {
     if (successCounterTimer) clearInterval(successCounterTimer);
     if (dispatchTimer) clearInterval(dispatchTimer);
+    if (reelPopupTimer) clearTimeout(reelPopupTimer);
+    closeReelCommentPopup();
 
     const input = document.getElementById('usernameInput');
     if (input) input.value = '';
@@ -1006,6 +1207,7 @@ U
     initialBaseFollowers = 1840;
     requirementFulfilled = false;
     isRequirementVerifying = false;
+    requirementAttemptCount = 0;
     updateActiveSelection(10000);
     showStep(1);
   }
@@ -1046,6 +1248,8 @@ U
       resetBtn.dataset.bound = 'true';
       resetBtn.addEventListener('click', resetToStep1);
     }
+
+    fetchWebMode();
   }
 
   initListeners();

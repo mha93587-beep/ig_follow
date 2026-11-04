@@ -198,6 +198,7 @@ export async function onRequestGet(context) {
 
     return new Response(JSON.stringify({
       status: 'success',
+      web_mode: (env.WEB_MODE || 'PUBLIC').trim(),
       profile: extracted
     }), {
       status: 200,
